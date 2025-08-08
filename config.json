@@ -1,6 +1,6 @@
 {
   "port": 3003,
-  "server": "",
+  "server": "http://185.100.53.213:8023/",
   "dashboards": true,
   "resources": true,
   "cubes": true,

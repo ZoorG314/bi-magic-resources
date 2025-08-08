@@ -1,0 +1,121 @@
+{
+  "display": {
+    "topBar": {
+      "ui:widget": "accordion",
+      "ui:classNames": "withGap",
+      "visible": {
+        "ui:widget": "switch"
+      },
+      "bgColor": {
+        "ui:widget": "color",
+        "ui:options": {
+          "alpha": true
+        },
+        "ui:classNames": "secondary"
+      },
+      "headerStyle": {
+        "ui:widget": "textSettings",
+        "ui:classNames": "secondary",
+        "color": {
+          "ui:widget": "color",
+          "ui:options": {
+            "alpha": true
+          }
+        }
+      },
+      "descriptionStyle": {
+        "ui:widget": "textSettings",
+        "ui:classNames": "secondary"
+      },
+      "borderStyle": {
+        "ui:widget": "borderSettings",
+        "ui:classNames": "secondary",
+        "borderWidth": {
+          "ui:widget": "borderWidth"
+        },
+        "borderColor": {
+          "ui:widget": "color",
+          "ui:options": {
+            "alpha": true
+          }
+        }
+      }
+    },
+    "common": {
+      "bgColor": {
+        "ui:widget": "color",
+        "ui:classNames": "secondary",
+        "ui:options": {
+          "alpha": true
+        }
+      },
+      "borderStyle": {
+        "ui:widget": "borderSettings",
+        "ui:classNames": "secondary",
+        "borderWidth": {
+          "ui:widget": "borderWidth"
+        },
+        "borderColor": {
+          "ui:widget": "color",
+          "ui:options": {
+            "alpha": true
+          }
+        },
+        "borderType": {
+          "ui:options": {
+            "canBeRemoved": true
+          }
+        }
+      }
+    }
+  },
+  "dataSource": {
+    "xAxis": {
+      "ui:options": {
+        "canEditStyles": true
+      }
+    },
+    "datalimit": {
+      "ui:widget": "number",
+      "ui:icon": "infinity",
+      "ui:help": "The number of rows of data loaded from the cube. Default is 128. Value 0 - no restrictions"
+    },
+    "style": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "backgroundColor": {
+            "ui:widget": "color",
+            "ui:options": {
+              "alpha": true,
+              "lpe": true,
+              "stoplights": true
+            }
+          },
+          "textStyle": {
+            "ui:widget": "textSettings",
+            "color": {
+              "ui:widget": "color",
+              "ui:options": {
+                "alpha": true,
+                "lpe": true,
+                "stoplights": true
+              }
+            },
+            "width": {
+              "ui:widget": "number",
+              "ui:options": {
+                "dimensionsAsteriskOnly": true
+              }
+            },
+            "options": {
+              "ui:widget": "options",
+              "ui:options": {
+                "dimensionsAsteriskOnly": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

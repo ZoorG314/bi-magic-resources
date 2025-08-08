@@ -1,0 +1,272 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "dataSource": {
+      "type": "object",
+      "properties": {
+        "koob": {
+          "type": "string"
+        },
+        "xAxis": {
+          "type": "string"
+        },
+        "yAxis": {
+          "type": "string"
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "measures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "filters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array"
+          }
+        },
+        "sortBy": {
+          "type": "string"
+        },
+        "datalimit": {
+          "type": "number",
+          "defaultValue": 10000
+        },
+        "subtotals": {
+          "type": "string"
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "title": "Name"
+                },
+                "backgroundColor": {
+                  "type": "string",
+                  "title": "Cell background",
+                  "placeholder": "default"
+                },
+                "textStyle": {
+                  "title": "Cell text",
+                  "type": "object",
+                  "properties": {
+                    "fontFamily": {
+                      "type": "string"
+                    },
+                    "fontSize": {
+                      "type": "integer",
+                      "default": 11,
+                      "minimum": 5,
+                      "maximum": 42
+                    },
+                    "fontWeight": {
+                      "type": "string"
+                    },
+                    "textAlign": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "width": {
+                  "title": "Column width",
+                  "type": "integer",
+                  "placeholder": "default"
+                },
+                "format": {
+                  "type": "string",
+                  "title": "Format",
+                  "placeholder": "default"
+                },
+                "options": {
+                  "type": "array",
+                  "title": "options",
+                  "items": {
+                    "type": "string",
+                    "enum": ["Hidden"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Hidden",
+          "!TopBarMenu",
+          "!TopBar",
+          "DisplayOverall",
+          "ExpandAllButton",
+          "ExpandAll"
+        ]
+      }
+    },
+    "display": {
+      "type": "object",
+      "properties": {
+        "topBar": {
+          "type": "object",
+          "title": "Top bar",
+          "properties": {
+            "visible": {
+              "type": "boolean",
+              "default": true
+            },
+            "bgColor": {
+              "type": "string",
+              "title": "Top bar background"
+            },
+            "headerStyle": {
+              "type": "object",
+              "title": "Header text",
+              "properties": {
+                "fontFamily": {
+                  "type": "string"
+                },
+                "fontSize": {
+                  "type": "integer",
+                  "minimum": 5,
+                  "maximum": 42,
+                  "multipleOf": 1,
+                  "default": 16
+                },
+                "color": {
+                  "type": "string"
+                }
+              }
+            },
+            "descriptionStyle": {
+              "type": "object",
+              "title": "Subheader text",
+              "properties": {
+                "fontFamily": {
+                  "type": "string"
+                },
+                "fontSize": {
+                  "type": "integer",
+                  "minimum": 5,
+                  "maximum": 42,
+                  "multipleOf": 1,
+                  "default": 12
+                },
+                "color": {
+                  "type": "string"
+                }
+              }
+            },
+            "borderStyle": {
+              "type": "object",
+              "title": "Top bar borders",
+              "properties": {
+                "borderColor": {
+                  "type": "string"
+                },
+                "borderType": {
+                  "type": "string",
+                  "placeholder": "none",
+                  "enum": ["solid", "dashed", "dotted"]
+                },
+                "borderWidth": {
+                  "placeholder": "none",
+                  "anyOf": [
+                    { "type": "number" },
+                    {
+                      "type": "array",
+                      "items": { "type": "number" }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "common": {
+          "type": "object",
+          "title": "Dashlet background and container",
+          "properties": {
+            "bgColor": {
+              "type": "string",
+              "title": "Dashlet background"
+            },
+            "borderStyle": {
+              "type": "object",
+              "title": "Dashlet borders",
+              "properties": {
+                "borderColor": {
+                  "type": "string"
+                },
+                "borderType": {
+                  "type": "string",
+                  "placeholder": "none",
+                  "enum": ["solid", "dashed", "dotted"]
+                },
+                "borderWidth": {
+                  "placeholder": "none",
+                  "anyOf": [
+                    { "type": "number" },
+                    {
+                      "type": "array",
+                      "items": { "type": "number" }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "dimensionsTitle": {
+          "type": "string",
+          "title": "Dimensions title"
+        }
+      }
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "src": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "output": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "xlsx",
+                "docx",
+                "csv"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "onClickDataPoint": {
+      "type": "string"
+    }
+  }
+}

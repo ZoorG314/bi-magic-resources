@@ -1,0 +1,10 @@
+{
+  "ru": {
+    "ExpandAll": "Развернуть все строки",
+    "ExpandAllButton": "Отобразить кнопку «развернуть»",
+    "Dimensions title": "Заголовок для размерностей"
+  },
+  "en": {
+    "ExpandAll": "Display expand button"
+  }
+}
